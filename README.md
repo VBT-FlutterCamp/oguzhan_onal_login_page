@@ -1,16 +1,6 @@
-# oguzhan_onal_login_page
+![Screenshot_6](https://user-images.githubusercontent.com/27727020/154585097-f4dcd988-234e-4198-8ba2-7be99911a981.png)
 
-A new Flutter project.
 
-## Getting Started
 
-This project is a starting point for a Flutter application.
+https://user-images.githubusercontent.com/27727020/154584768-0e9d5228-bd55-4628-9ee2-4e6b15a31656.mp4
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
