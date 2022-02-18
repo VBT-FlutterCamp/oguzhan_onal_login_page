@@ -8,6 +8,9 @@ import 'package:oguzhan_onal_login_page/product/companents/text/app_text_strings
 import 'package:oguzhan_onal_login_page/product/companents/consts.dart';
 import 'package:oguzhan_onal_login_page/product/companents/colors/colors.dart';
 import 'package:oguzhan_onal_login_page/product/widget/custom_text_from_field.dart';
+import 'package:oguzhan_onal_login_page/product/widget/elevatedButton.dart';
+
+import '../../../product/widget/textFields.dart';
 
 class LoginView extends StatefulWidget {
   const LoginView({Key? key}) : super(key: key);
@@ -74,7 +77,14 @@ class _LoginViewState extends State<LoginView> {
                       right: context.dynamicWidth(Consts.padding_dynamic)),
                   child: Column(
                     children: [
-                      Align(alignment: Alignment.topLeft, child: _TextFields()),
+                      Align(
+                          alignment: Alignment.topLeft,
+                          child: textFields(
+                              formKey: _formKey,
+                              emailNode: _emailNode,
+                              mailController: _mailController,
+                              passwordNode: _passwordNode,
+                              passwordController: _passwordController)),
                       Padding(padding: context.paddingLow),
                       Align(
                           alignment: Alignment.topRight,
@@ -94,7 +104,7 @@ class _LoginViewState extends State<LoginView> {
                 child: SizedBox(
                     height: context.dynamicHeight(0.1),
                     width: context.dynamicWidth(0.9),
-                    child: _LoginButton(context)),
+                    child: customElavated(formKey: _formKey, context: context)),
               ),
               SizedBox(height: context.dynamicHeight(0.16)),
               Row(
@@ -116,51 +126,6 @@ class _LoginViewState extends State<LoginView> {
               )
             ],
           ),
-        ));
-  }
-
-  Form _TextFields() {
-    return Form(
-      key: _formKey,
-      child: Align(
-        alignment: Alignment.topLeft,
-        child: Column(
-          children: [
-            CustomTextFormField(
-              focusNode: _emailNode,
-              codeController: _mailController,
-              labelText: AppString().emailText ?? '',
-              textInputType: TextInputType.emailAddress,
-            ),
-            //Padding(padding: context.paddingLow),
-            CustomTextFormField(
-              focusNode: _passwordNode,
-              codeController: _passwordController,
-              labelText: AppString().passwordText ?? '',
-              isPassword: true,
-              textInputType: TextInputType.visiblePassword,
-            )
-          ],
-        ),
-      ),
-    );
-  }
-
-  ElevatedButton _LoginButton(BuildContext context) {
-    return ElevatedButton(
-        style: ElevatedButton.styleFrom(
-          primary: ConstColors.buttonColor,
-        ),
-        onPressed: () {
-          if (_formKey.currentState!.validate()) {
-            ScaffoldMessenger.of(context).showSnackBar(
-                SnackBar(content: Text(AppString().talepAlindi ?? '')));
-          }
-        },
-        child: Text(
-          AppString().signInText ?? '',
-          style: TextStyle(
-              color: Colors.white, fontSize: 32, fontWeight: FontWeight.normal),
         ));
   }
 }

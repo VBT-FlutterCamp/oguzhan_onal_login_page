@@ -10,7 +10,7 @@ class CustomTextFormField extends StatefulWidget {
   final String labelText;
   final bool isPassword;
   final FocusNode focusNode;
-  CustomTextFormField(
+  const CustomTextFormField(
       {Key? key,
       required this.codeController,
       required this.textInputType,
@@ -26,7 +26,7 @@ class CustomTextFormField extends StatefulWidget {
 class _CustomTextFormFieldState extends State<CustomTextFormField> {
   bool isTap = false;
   bool isPasswordVisible = true;
-  void _toggleTap(bool) {
+  void _toggleTap(bool a) {
     setState(() {
       if (isTap) {
         isTap = false;
