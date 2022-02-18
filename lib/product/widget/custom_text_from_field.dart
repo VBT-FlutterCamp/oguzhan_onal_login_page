@@ -38,22 +38,21 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.start,
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Container(
-          decoration: BoxDecoration(
-              color: (isTap ? ConstColors.onFocusedBox : Colors.white)),
-          child: SizedBox(
-            width: context.dynamicWidth(0.014),
-            height: context.dynamicHeight(0.08),
+    return Container(
+      decoration: BoxDecoration(border: Border.all(color: ConstColors.border)),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Container(
+            decoration: BoxDecoration(
+                color: (isTap ? ConstColors.onFocusedBox : Colors.white)),
+            child: SizedBox(
+              width: context.dynamicWidth(0.014),
+              height: context.dynamicHeight(0.08),
+            ),
           ),
-        ),
-        Expanded(
-          child: Container(
-            decoration:
-                BoxDecoration(border: Border.all(color: ConstColors.border)),
+          Expanded(
             child: SizedBox(
               child: FocusScope(
                 onFocusChange: _toggleTap,
@@ -77,13 +76,14 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
                       ? isPasswordVisible
                       : !isPasswordVisible,
                   decoration: InputDecoration(
+                    focusedBorder: InputBorder.none,
                     suffixIcon: widget.isPassword
                         ? IconButton(
                             icon: isPasswordVisible
-                                ? Icon(Icons.visibility_off,
+                                ? Icon(Icons.visibility,
                                     color: ConstColors.iconColor, size: 25)
                                 : Icon(
-                                    Icons.visibility,
+                                    Icons.visibility_off,
                                     color: ConstColors.iconColor,
                                     size: 25,
                                   ),
@@ -95,15 +95,16 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
                         fontSize: 16,
                         fontWeight: FontWeight.normal,
                         color: ConstColors.email),
-                    border:
-                        UnderlineInputBorder(borderRadius: BorderRadius.zero),
+                    border: UnderlineInputBorder(
+                        borderRadius: BorderRadius.zero,
+                        borderSide: BorderSide.none),
                   ),
                 ),
               ),
             ),
           ),
-        ),
-      ],
+        ],
+      ),
     );
   }
 }
