@@ -1,13 +1,10 @@
 // ignore_for_file: prefer_const_constructors
 
-import 'dart:ui';
-
 import 'package:flutter/material.dart';
 import 'package:kartal/kartal.dart';
 import 'package:oguzhan_onal_login_page/product/companents/text/app_text_strings.dart';
 import 'package:oguzhan_onal_login_page/product/companents/consts.dart';
 import 'package:oguzhan_onal_login_page/product/companents/colors/colors.dart';
-import 'package:oguzhan_onal_login_page/product/widget/custom_text_from_field.dart';
 import 'package:oguzhan_onal_login_page/product/widget/elevatedButton.dart';
 
 import '../../../product/widget/textFields.dart';
@@ -21,11 +18,9 @@ class LoginView extends StatefulWidget {
 
 class _LoginViewState extends State<LoginView> {
   final _formKey = GlobalKey<FormState>();
-  final TextEditingController _codeController = TextEditingController();
   final TextEditingController _mailController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
   bool isCheckBox = false;
-  final FocusNode _codeNode = FocusNode();
   final FocusNode _emailNode = FocusNode();
   final FocusNode _passwordNode = FocusNode();
   bool isValidate = false;
@@ -44,7 +39,7 @@ class _LoginViewState extends State<LoginView> {
               Container(
                 height: context.dynamicHeight(0.17),
                 padding: EdgeInsets.only(
-                    left: context.dynamicWidth(Consts.padding_dynamic)),
+                    left: context.dynamicWidth(Consts.paddingDynamic)),
                 decoration: BoxDecoration(color: Colors.white),
                 child: Column(
                   // ignore: prefer_const_literals_to_create_immutables
@@ -73,13 +68,13 @@ class _LoginViewState extends State<LoginView> {
                   height: context.dynamicHeight(0.30),
                   decoration: BoxDecoration(color: Colors.white),
                   padding: EdgeInsets.only(
-                      left: context.dynamicWidth(Consts.padding_dynamic),
-                      right: context.dynamicWidth(Consts.padding_dynamic)),
+                      left: context.dynamicWidth(Consts.paddingDynamic),
+                      right: context.dynamicWidth(Consts.paddingDynamic)),
                   child: Column(
                     children: [
                       Align(
                           alignment: Alignment.topLeft,
-                          child: textFields(
+                          child: TextFields(
                               formKey: _formKey,
                               emailNode: _emailNode,
                               mailController: _mailController,
@@ -104,7 +99,7 @@ class _LoginViewState extends State<LoginView> {
                 child: SizedBox(
                     height: context.dynamicHeight(0.1),
                     width: context.dynamicWidth(0.9),
-                    child: customElavated(formKey: _formKey, context: context)),
+                    child: CustomElavated(formKey: _formKey, context: context)),
               ),
               SizedBox(height: context.dynamicHeight(0.16)),
               Row(

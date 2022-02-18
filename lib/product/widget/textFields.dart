@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:oguzhan_onal_login_page/product/companents/text/app_text_strings.dart';
 import 'package:oguzhan_onal_login_page/product/widget/custom_text_from_field.dart';
 
-class textFields extends StatelessWidget {
-  const textFields({
+class TextFields extends StatelessWidget {
+  const TextFields({
     Key? key,
     required GlobalKey<FormState> formKey,
     required FocusNode emailNode,

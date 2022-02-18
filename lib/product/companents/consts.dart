@@ -1,3 +1,3 @@
 class Consts {
-  static const padding_dynamic = 0.045;
+  static const paddingDynamic = 0.045;
 }
