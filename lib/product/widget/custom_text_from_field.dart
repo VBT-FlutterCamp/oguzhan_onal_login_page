@@ -68,6 +68,7 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
                     if (value.length > 20) {
                       return "20 den büyük olamaz";
                     }
+                    return null;
                   },
                   focusNode: widget.focusNode,
                   controller: widget.codeController,
